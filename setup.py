@@ -1,12 +1,16 @@
+import codecs
 import os
 from setuptools import find_packages
 from setuptools import setup
+
 
 version = '0.1dev'
 
 here = os.path.abspath(os.path.dirname(__file__))
 try:
     README = open(os.path.join(here, 'README.md')).read()
+    README = codecs.open(os.path.join(here, 'README.md'),
+                         encoding='utf-8').read()
     CHANGES = ''
 except IOError:
     README = CHANGES = ''
